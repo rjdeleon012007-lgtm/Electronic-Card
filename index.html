@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card" id="mainCard">
+        <div id="questionScreen">
+            <h2>Hi, Ma'am Roane! 💻</h2>
+            <p>Handa ka na ba Ma'am sa pinakamahirap at pinakamalupet na Q/A?</p>
+            <div class="btn-group">
+                <button id="yesBtn" onclick="startQuiz()">Handa na! 🚀</button>
+                <button id="noBtn" onmouseover="moveNo()" onclick="moveNo()">hindi pa 🛑</button>
+            </div>
+        </div>
+        <div id="quizScreen" class="hidden">
+            <h2 id="quizTitle">ITWS02 Question #1</h2>
+            <p id="questionText">Loading question...</p>
+            <div id="secretClue" class="secret-clue hidden" title="Pahiwatig">
+                💡 <span>Clue: hover</span> <strong id="clueText"></strong>
+            </div>
+            <div id="choicesContainer" class="choices-container hidden"></div>
+            <div class="input-group" id="inputGroup">
+                <input type="text" id="userAnswer" placeholder="I-type ang iyong sagot dito..." onkeypress="handleKeyPress(event)">
+                <div id="errorMsg" class="error-msg"></div>
+                <button onclick="checkAnswer()">submit🔓</button>
+            </div>
+        </div>
+        <div id="successScreen" class="hidden success-screen">
+            <h2>Mission Success, Ma'am! 🎉</h2>
+            <p style="margin-bottom: 10px; font-size: 13px; color: #7f8c8d;">may hinanda po ako n sulat para sainyo</p>
+            <div class="envelope-container" id="envelopeContainer" onclick="openEnvelope()">
+                <div class="envelope">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-pocket"></div>
+                    <div class="envelope-seal">💌</div>
+                    <div class="envelope-text">I-click para buksan</div>
+                </div>
+            </div>
+            <div class="letter-box hidden" id="letterBox">
+                <p>Dear Ma'am Roane,</p>
+                <p>
+                    Maraming salamat po sa lahat ng turo, pasensya, at guidance ninyo sa amin sa ITWS02! 
+                    Kahit minsan makukulit po kami at nagiging pasaway ay sobrang bait nyo parin po samin at binibigyan nyo parin po kami ng considerations
+                    Hindi na rin po ako mag mamalinis ma'am kaya medyo maayos po yung java dito ay nag patulong po ako sa ai, sinasabi ko po kung ano ang gusto ko mangyari at kukunin ko po lahat ng mali ko at pag kukulang, pero hindi naman po lahat ay inasa ko na sa ai.
+                </p>
+                <p>
+                    Sana po ay patuloy kayong maging inspirasyon sa marami pang estudyante. Ingat po palagi at God bless! (Sana uno talaga 😄)
+                </p>
+                <p class="letter-sign">
+                    Lubos na gumagalang,<br>
+                    Reynante (RJ) ⭐
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
